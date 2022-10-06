@@ -5,15 +5,15 @@
 
 def fib(n):
     fibo_nums = []
-    a = 1
+    a = 0
     b = 1
-    for i in range(n-1):
-        fibo_nums.append(a)
-        a, b = b, a + 1
-    a, b = 0, 1 
     for i in range(n):
         fibo_nums.append(a)
-        a, b = b, a - 1
+        a, b = b, a + b
+    a, b = 0, 1 
+    for i in range(n - 1):
+        fibo_nums.insert(0, a)
+        a, b = b, a - b
     return fibo_nums
 
 n = int(input('введите число = '))
